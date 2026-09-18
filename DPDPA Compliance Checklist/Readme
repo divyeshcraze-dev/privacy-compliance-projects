@@ -1,0 +1,23 @@
+# DPDPA Compliance Checklist
+A simple, practical checklist for organizations preparing for India’s Digital Personal Data Protection Act (DPDPA, 2023), with comparisons to the EU GDPR.
+
+## Purpose
+This project converts my research into a usable compliance tool.  
+It helps startups, GCCs, and students quickly understand DPDPA obligations and how they compare to GDPR.
+
+## Quick Checklist
+- ✅ Consent management (DPDPA Section 7 vs GDPR Article 6)  
+- ✅ Data principal rights (access, correction, erasure)  
+- ✅ Breach notification (72 hours rule)  
+- ✅ Penalties (fixed cap vs turnover-linked fines)  
+
+## Repository Contents
+- `README.md` → Overview + checklist  
+- `DPDPA-vs-GDPR.md` → Detailed comparison tables  
+- `resources/` → Official links and references  
+- `roadmap.md` → Future privacy projects  
+
+## How to Use
+- Read the checklist here for a quick overview.  
+- Explore `DPDPA-vs-GDPR.md` for detailed comparisons.  
+- Use `resources/` for official texts and guidance.  
