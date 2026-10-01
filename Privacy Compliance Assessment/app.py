@@ -60,12 +60,6 @@ values = [
     sum(1 for a in answers if a == "Partial"),
     sum(1 for a in answers if a == "No"),
 ]
-labels = ["Compliant", "Partial", "Non-Compliant"]
-values = [
-    sum(1 for a in answers if a == "Yes"),
-    sum(1 for a in answers if a == "Partial"),
-    sum(1 for a in answers if a == "No"),
-]
 
 if sum(values) > 0:  # only plot if there's data
     fig, ax = plt.subplots()
@@ -73,7 +67,3 @@ if sum(values) > 0:  # only plot if there's data
     st.pyplot(fig)
 else:
     st.info("Answer some questions to see the compliance distribution chart.")
-
-fig, ax = plt.subplots()
-ax.pie(values, labels=labels, autopct="%1.1f%%", startangle=90)
-st.pyplot(fig)
