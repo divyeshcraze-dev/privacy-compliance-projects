@@ -53,7 +53,7 @@ with st.expander("See remediation guidance"):
         if answers[i] in ["No", "Partial"]:
             st.write(f"- {row['Control ID']}: {row['Remediation Guidance']}")
 
-# Altair chart summary
+# Altair chart summary with custom colors
 labels = ["Compliant", "Partial", "Non-Compliant"]
 values = [
     sum(1 for a in answers if a == "Yes"),
@@ -66,7 +66,10 @@ data = pd.DataFrame({"Status": labels, "Count": values})
 if data["Count"].sum() > 0:
     chart = alt.Chart(data).mark_arc(innerRadius=50).encode(
         theta="Count",
-        color="Status",
+        color=alt.Color("Status", scale=alt.Scale(
+            domain=["Compliant", "Partial", "Non-Compliant"],
+            range=["green", "yellow", "red"]
+        )),
         tooltip=["Status", "Count"]
     )
     st.altair_chart(chart, use_container_width=True)
