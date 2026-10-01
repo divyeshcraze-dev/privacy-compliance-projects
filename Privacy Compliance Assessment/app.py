@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import altair as alt
 
 # Load your compliance matrix
 df = pd.read_excel("Privacy Compliance Assessment/Compliance_Assessment_Project.xlsx")
@@ -53,7 +53,7 @@ with st.expander("See remediation guidance"):
         if answers[i] in ["No", "Partial"]:
             st.write(f"- {row['Control ID']}: {row['Remediation Guidance']}")
 
-# Pie chart summary
+# Altair chart summary
 labels = ["Compliant", "Partial", "Non-Compliant"]
 values = [
     sum(1 for a in answers if a == "Yes"),
@@ -61,9 +61,14 @@ values = [
     sum(1 for a in answers if a == "No"),
 ]
 
-if sum(values) > 0:  # only plot if there's data
-    fig, ax = plt.subplots()
-    ax.pie(values, labels=labels, autopct="%1.1f%%", startangle=90)
-    st.pyplot(fig)
+data = pd.DataFrame({"Status": labels, "Count": values})
+
+if data["Count"].sum() > 0:
+    chart = alt.Chart(data).mark_arc(innerRadius=50).encode(
+        theta="Count",
+        color="Status",
+        tooltip=["Status", "Count"]
+    )
+    st.altair_chart(chart, use_container_width=True)
 else:
-    st.info("Answer some questions to see the compliance distribution chart.")
+    st.info("📊 Answer some questions to see the compliance distribution chart.")
