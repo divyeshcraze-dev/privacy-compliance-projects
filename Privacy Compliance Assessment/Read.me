@@ -1,34 +1,107 @@
-# Privacy Compliance Assessment – ABC FinTech
+# Privacy Compliance Assessment Tool
+
+📊 **Live App:** [Streamlit Deployment](https://privacy-compliance-projects-hyfic37uib8yu38v2ukzmk.streamlit.app/)
+
+---
 
 ## Overview
+This project is a **Privacy Compliance Assessment Dashboard** designed to help organizations evaluate their compliance posture under **DPDPA/GDPR**.  
+It started as a Typeform checklist and evolved into a **Streamlit app** hosted on GitHub + Streamlit Cloud.
 
-A simulated privacy compliance assessment of a fictional fintech company, focusing on how personal data is collected, processed, stored, and shared.
+---
 
-## Objectives
+## Features
+- ✅ Interactive questionnaire with **Yes / Partial / No** scoring  
+- ✅ **Compliance percentage** calculation with progress bar  
+- ✅ **Color-coded risk posture** (Green = Strong, Yellow = Moderate, Red = High Risk)  
+- ✅ **Remediation guidance** shown in expandable sections  
+- ✅ **Donut chart** visualization of compliance distribution  
+- ✅ Built with **Streamlit, Pandas, OpenPyXL, Altair**  
 
-- Identify personal data processed by the organisation.
-- Analyse the purpose of processing.
-- Identify potential privacy risks.
-- Recommend appropriate privacy controls.
+---
 
-## Scope
+## Screenshots
+### 1. Questionnaire
+![Questionnaire](docs/screenshot-questionnaire.png)
 
-The assessment covers customer data, KYC information, transaction data, communications, and security-related data.
+### 2. Compliance Dashboard
+![Compliance Dashboard](docs/screenshot-dashboard.png)
 
-## Framework
+### 3. Remediation Guidance
+![Remediation Guidance](docs/screenshot-remediation.png)
 
-The assessment is based on general data protection principles, with reference to the **DPDP Act, 2023**.
+---
 
-## Tools
+## How It Works
+1. Answer each checklist question with **Yes**, **Partial** or **No**.
+2. The app converts your answers into an overall **compliance percentage**.
+3. Your result is mapped to a **risk posture**: 🟢 Strong, 🟡 Moderate or 🔴 High Risk.
+4. Expand any gap to see **remediation guidance**.
+5. Review the **donut chart** for a quick view of how your answers are distributed.
 
-- Microsoft Excel
-- GitHub
-- Power BI
+---
 
-> This is a fictional educational project and does not constitute legal advice.
+## How to Run Locally
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/privacy-compliance-projects.git
+   cd privacy-compliance-projects
+   ```
+
+2. (Optional) Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate      # Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
+
+5. Open `http://localhost:8501` in your browser.
+
+---
+
+## Tech Stack
+| Tool | Purpose |
+|------|---------|
+| Streamlit | Web app framework and UI |
+| Pandas | Scoring and data handling |
+| OpenPyXL | Excel file support |
+| Altair | Donut chart visualization |
+
+---
+
+## Project Structure
+```
+├── app.py                 # Main Streamlit app
+├── requirements.txt       # Dependencies
+├── docs/
+│   └── screenshot-dashboard.png
+└── README.md
+```
+
+---
+
+## Roadmap
+- [ ] Export assessment results to Excel/PDF
+- [ ] Separate DPDPA and GDPR question sets
+- [ ] Section-wise scoring (consent, data subject rights, breach response, etc.)
+- [ ] Save and compare assessments over time
+
+---
+
+## Disclaimer
+This tool is for educational and self-assessment purposes only and does not constitute legal advice. Consult a qualified legal professional for compliance decisions.
+
+---
 
 ## Author
-
-**Divyesh S**  
-LL.M. – Data Privacy and IT Laws  
-Manipal Law School, MAHE Bengaluru
+**[Your Name]**  
+[LinkedIn](https://linkedin.com/in/your-profile) · [GitHub](https://github.com/yourusername)
