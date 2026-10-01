@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # Load your compliance matrix
-df = pd.read_excel("Compliance_Assessment_Project.xlsx")
+df = pd.read_excel("Privacy Compliance Assessment/Compliance_Assessment_Project.xlsx")
 
 st.title("Privacy Compliance Assessment Tool")
 
