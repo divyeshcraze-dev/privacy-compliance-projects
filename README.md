@@ -16,11 +16,9 @@ How they connect: the comparative analysis is the research, the DPA applies it i
 
 ## Privacy Compliance Assessment
 
-![Dashboard](docs/screenshot-dashboard.png)
-
 The app guides a user through a questionnaire, scores the result as a risk indicator and lists remediation steps. It is a learning tool: the score is an indicator, not a legal opinion or a certification of compliance.
 
-More screenshots: [questionnaire](docs/screenshot-questionnaire.png) and [remediation](docs/screenshot-remediation.png).
+**[See the full README with screenshots, scoring method and setup](Privacy%20Compliance%20Assessment/README.md)**
 
 To run it locally:
 
